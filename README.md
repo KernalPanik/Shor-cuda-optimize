@@ -14,6 +14,6 @@ make all
 
 Profiling has shown that nearly 95% of Shor's algorithm simulation was dedicated to the Quantum Fourier Transform calculation. Based on the fact that QFT can be calculated using Fast Fourier Transform algorithm, I've decided to use CUDA implementation of such algorithm, called cuFFT, to speed up the calculation.
 
-In the result, the calculation of QFT was sped up approx. 30 times.
+In the result, the calculation of QFT was sped up by approx. 30 times.
 
 ![Graph](graph.png)
