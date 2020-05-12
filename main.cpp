@@ -14,7 +14,7 @@ int main(int argc, char** argv)
     auto end = chrono::steady_clock::now();
     //int N = 2813;
    
-    std::vector<int> Nval = { 2813/*, 2813, 3901, 8927, 11387, 18419, 30883, 45173, 59431 */};
+    std::vector<int> Nval = { 575/*2813, 2813, 3901, 8927, 11387, 18419, 30883, 45173, 59431 */};
         
     double avgTime = 0;
     double avgTimeQFT = 0;
