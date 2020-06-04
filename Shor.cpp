@@ -43,7 +43,7 @@ long long QFT(Register *reg, unsigned int start, unsigned int end) {
 }
 
 
-unsigned int find_Shor_period(unsigned int a, unsigned int N, unsigned int depth_limit, __int64 &time) {
+unsigned int find_Shor_period(unsigned int a, unsigned int N, unsigned int depth_limit, __int64 &time, std::vector<std::vector<amp>> noisyHadamard, __int64  &tryAmount) {
 	/*
 	Find the period r of the function
 		f(x) = a^x mod N
@@ -81,7 +81,7 @@ unsigned int find_Shor_period(unsigned int a, unsigned int N, unsigned int depth
 
 	// Make equal superposition in register 1.
 
-	for (unsigned int i = 0; i < L1; i++) reg.Hadamard(i);
+	for (unsigned int i = 0; i < L1; i++) reg.Hadamard(i, noisyHadamard);
 
 	// Could have also just QFTed the first L1 qubits. Has same effect.
 	
@@ -118,7 +118,8 @@ unsigned int find_Shor_period(unsigned int a, unsigned int N, unsigned int depth
 	auto start = chrono::steady_clock::now();
 	QFT(&reg, 0, L1);
 	auto end = chrono::steady_clock::now();
-	printf("QFT time: %d\n", chrono::duration_cast<chrono::milliseconds>(end - start).count());
+	tryAmount++;
+	//printf("QFT time: %d\n", chrono::duration_cast<chrono::milliseconds>(end - start).count());
 	time += chrono::duration_cast<chrono::milliseconds>(end - start).count();
 	//auto start = chrono::steady_clock::now();
 	// m will be an integer multiple of q / r with high prbability
@@ -127,7 +128,7 @@ unsigned int find_Shor_period(unsigned int a, unsigned int N, unsigned int depth
 
 	if (m == 0) {
 		// printf("Quantum period find failed; trying again\n");
-		return find_Shor_period(a, N, depth_limit - 1, time);
+		return find_Shor_period(a, N, depth_limit - 1, time, noisyHadamard, tryAmount);
 	}
 
 	// with high probability, m = lambda * q / r for some
@@ -159,7 +160,7 @@ unsigned int find_Shor_period(unsigned int a, unsigned int N, unsigned int depth
 
 	if (r == 0) {
 		// printf("Quantum period find failed; trying again\n");
-		return find_Shor_period(a, N, depth_limit - 1, time);
+		return find_Shor_period(a, N, depth_limit - 1, time, noisyHadamard, tryAmount);
 	}
 
 	// We already made sure that r was even, so we're good.
@@ -171,7 +172,8 @@ unsigned int find_Shor_period(unsigned int a, unsigned int N, unsigned int depth
 	return r;
 }
 
-unsigned int Shor(unsigned int N, unsigned int depth_limit, __int64 &timeElapsedForQFT)
+unsigned int Shor(unsigned int N, unsigned int depth_limit, __int64& timeElapsedForQFT, __int64& tryAmount,
+	std::vector<std::vector<amp>> noisyHadamard)
 {
     if (depth_limit <= 0) 
     {
@@ -188,12 +190,12 @@ unsigned int Shor(unsigned int N, unsigned int depth_limit, __int64 &timeElapsed
 		//printf("Completed Shor's algorithm classically. Found a factor of %d to be %d\n", N, g); 
         //printf("But we want to solve it quantumly! So starting over...\n");
 		// return g;
-        return Shor(N, depth_limit, timeElapsedForQFT);
-	} 
+		return Shor(N, depth_limit, timeElapsedForQFT, tryAmount, noisyHadamard);
+	}
 
 	// printf("Using quantum period finding algorithm to find the period of %d ^ x mod %d\n", a, N);
 	__int64 time = 0;
-	unsigned int r = find_Shor_period(a, N, depth_limit, timeElapsedForQFT);
+	unsigned int r = find_Shor_period(a, N, depth_limit, timeElapsedForQFT, noisyHadamard, tryAmount);
     unsigned int n = mod_power(a, r / 2, N);
 	// if (r % 2 == 1 || n % N == N-1) return Shor(N, depth_limit-1); // start over
     
@@ -209,5 +211,5 @@ unsigned int Shor(unsigned int N, unsigned int depth_limit, __int64 &timeElapsed
 	}
 
 	// printf("Shor did not find a factor; trying again\n");
-	return Shor(N, depth_limit - 1, timeElapsedForQFT);
+	return Shor(N, depth_limit, timeElapsedForQFT, tryAmount, noisyHadamard);
 }
