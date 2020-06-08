@@ -62,7 +62,7 @@ std::ostream &operator<<(std::ostream &os, Unitary &U) {
 			os << U[r][c] << "\t";
 		}
 		os << "\n";
-	}
+	} 
 	return os;
 }
 
@@ -78,16 +78,28 @@ Unitary Unitary::Identity(unsigned int dimension) {
 	return u;
 }
 
-Unitary Unitary::Hadamard() {
+Unitary Unitary::Hadamard(){
 	// H = ((|0> + |1>) <0 | + (|0> - |1>) <1|) / sqrt(2)
 
 	Unitary u(2); 
-    amp c = 1 / sqrt(2);
+    amp c = 1 / sqrt(2); 
 	u[0][0] = c; 
     u[0][1] = c; 
     u[1][0] = c; 
     u[1][1] = -c;
 
+	return u;
+}
+
+Unitary Unitary::Hadamard(amp val1, amp val2, amp val3, amp val4) {
+	// H = ((|0> + |1>) <0 | + (|0> - |1>) <1|) / sqrt(2)
+
+	Unitary u(2);
+	amp c = 1 / sqrt(2);
+	u[0][0] = val1;
+	u[0][1] = val2;
+	u[1][0] = val3;
+	u[1][1] = -val4;
 	return u;
 }
 
@@ -178,7 +190,7 @@ Unitary Unitary::QFT(unsigned int num_qubits) {
 	unsigned int N = 1 << num_qubits; 
     Unitary u(N); // 1 << num_qubits is pow(2, qubits)
 	amp omega = exp(2*acos(-1.)*amp(0, 1) / double(N)); // acos(-1) is pi.
-	amp c = 1 / sqrt(N);
+	amp c = 1 / sqrt(N); //TODO: implement qft noise here
 	for (unsigned int i = 0; i < N; i++) {
 		for (unsigned int j = 0; j < N; j++) {
 			u[i][j] = pow(omega, i*j) * c;

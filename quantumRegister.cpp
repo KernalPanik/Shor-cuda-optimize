@@ -297,6 +297,18 @@ void Register::Hadamard(unsigned int qubit) {
 	apply_gate(Unitary::Hadamard(), v);
 }
 
+void Register::Hadamard(unsigned int qubit, std::vector<std::vector<amp>> noisyHadamard) {
+	/*
+	zero -> n-1 qubit indexing.
+	Hadamard operator on single qubit is
+		H = ((|0> + |1>) <0| + (|0> - |1>) <1|) / sqrt(2)
+	*/
+
+	vec_int v;
+	v.push_back(qubit);
+	apply_gate(Unitary::Hadamard(noisyHadamard[0][0], noisyHadamard[0][1], noisyHadamard[1][0], noisyHadamard[1][1]), v);
+}
+
 void Register::PhaseShift(unsigned int qubit, double theta) {
 	/*
 	zero -> n-1 qubit indexing.

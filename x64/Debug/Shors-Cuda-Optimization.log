@@ -1,10 +1,48 @@
 ﻿  Compiling CUDA source file qft.cu...
   
-  C:\Users\Lume\source\repos\Shors-Cuda-Optimization>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\bin\HostX86\x64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o x64\Debug\qft.cu.obj "C:\Users\Lume\source\repos\Shors-Cuda-Optimization\qft.cu" 
-C:/Users/Lume/source/repos/Shors-Cuda-Optimization/qft.cu(38): warning : variable "result" was declared but never referenced
-  
+  C:\Users\Lume\source\repos\Shor-cuda-optimize>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\bin\HostX86\x64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.2\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o x64\Debug\qft.cu.obj "C:\Users\Lume\source\repos\Shor-cuda-optimize\qft.cu" 
   qft.cu
-C:/Users/Lume/source/repos/Shors-Cuda-Optimization/qft.cu(46): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:/Users/Lume/source/repos/Shors-Cuda-Optimization/qft.cu(38): warning C4101: 'result': unreferenced local variable
+C:/Users/Lume/source/repos/Shor-cuda-optimize/qft.cu(37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:/Users/Lume/source/repos/Shor-cuda-optimize/qft.cu(50): warning C4244: '=': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
+C:/Users/Lume/source/repos/Shor-cuda-optimize/qft.cu(51): warning C4244: '=': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=double
+          ]
   main.cpp
-  Shors-Cuda-Optimization.vcxproj -> C:\Users\Lume\source\repos\Shors-Cuda-Optimization\x64\Debug\Shors-Cuda-Optimization.exe
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(16,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(108): message : see reference to function template instantiation 'std::vector<std::vector<amp,std::allocator<amp>>,std::allocator<std::vector<amp,std::allocator<amp>>>> Multiply<amp>(std::vector<std::vector<amp,std::allocator<amp>>,std::allocator<std::vector<amp,std::allocator<amp>>>> &,std::vector<std::vector<amp,std::allocator<amp>>,std::allocator<std::vector<amp,std::allocator<amp>>>> &)' being compiled
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(16,1): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(17,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(17,1): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(18,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(18,1): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+  quantumRegister.cpp
+C:\Users\Lume\source\repos\Shor-cuda-optimize\quantumRegister.cpp(205,51): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\quantumRegister.cpp(202,18): warning C4101: 'j': unreferenced local variable
+C:\Users\Lume\source\repos\Shor-cuda-optimize\quantumRegister.cpp(202,15): warning C4101: 'r': unreferenced local variable
+C:\Users\Lume\source\repos\Shor-cuda-optimize\quantumRegister.cpp(252,51): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  rand.cpp
+  Shor.cpp
+C:\Users\Lume\source\repos\Shor-cuda-optimize\Shor.cpp(70,18): warning C4244: 'initializing': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\Shor.cpp(71,18): warning C4244: 'initializing': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\Shor.cpp(121,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type '_Rep'
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\Lume\source\repos\Shor-cuda-optimize\Shor.cpp(121,9): message : consider using '%lld' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\Shor.cpp(121,9): message : consider using '%Id' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\Shor.cpp(121,9): message : consider using '%I64d' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\Shor.cpp(143,12): warning C4244: '=': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\Shor.cpp(156,13): warning C4244: '=': conversion from 'double' to 'unsigned int', possible loss of data
+  unitary.cpp
+  util.cpp
+  Generating Code...
+  LINK : C:\Users\Lume\source\repos\Shor-cuda-optimize\x64\Debug\Shors-Cuda-Optimization.exe not found or not built by the last incremental link; performing full link
+     Creating library C:\Users\Lume\source\repos\Shor-cuda-optimize\x64\Debug\Shors-Cuda-Optimization.lib and object C:\Users\Lume\source\repos\Shor-cuda-optimize\x64\Debug\Shors-Cuda-Optimization.exp
+  Shors-Cuda-Optimization.vcxproj -> C:\Users\Lume\source\repos\Shor-cuda-optimize\x64\Debug\Shors-Cuda-Optimization.exe

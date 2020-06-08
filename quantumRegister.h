@@ -31,6 +31,7 @@ class Register
 		void apply_gate(Unitary u, vec_int qubits);
 
 		void Hadamard(unsigned int qubit);
+		void Register::Hadamard(unsigned int qubit, std::vector<std::vector<amp>> noisyHadamard);
 		void PhaseShift(unsigned int qubit, double theta);
 		void PiOverEight(unsigned int qubit);
 		void PauliX(unsigned int qubit);

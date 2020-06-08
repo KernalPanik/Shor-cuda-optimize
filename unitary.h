@@ -18,6 +18,7 @@ class Unitary {
 
 		static Unitary Identity(unsigned int dimension);
 		static Unitary Hadamard();
+		static Unitary Hadamard(amp val1, amp val2, amp val3, amp val4);
 		static Unitary PauliX();
 		static Unitary PauliY();
 		static Unitary PauliZ();

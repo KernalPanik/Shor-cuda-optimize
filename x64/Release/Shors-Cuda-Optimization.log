@@ -1,20 +1,31 @@
 ﻿  main.cpp
-C:\Users\Lume\source\repos\Shors-Cuda-Optimization\main.cpp(36,20): warning C4477: 'printf' : format string '%ld' requires an argument of type 'long', but variadic argument 3 has type '_Rep'
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): warning C4477: 'printf' : format string '%ld' requires an argument of type 'long', but variadic argument 3 has type '_Rep'
           with
           [
               _Rep=__int64
           ]
-C:\Users\Lume\source\repos\Shors-Cuda-Optimization\main.cpp(36,20): message : consider using '%lld' in the format string
-C:\Users\Lume\source\repos\Shors-Cuda-Optimization\main.cpp(36,20): message : consider using '%Id' in the format string
-C:\Users\Lume\source\repos\Shors-Cuda-Optimization\main.cpp(36,20): message : consider using '%I64d' in the format string
-C:\Users\Lume\source\repos\Shors-Cuda-Optimization\main.cpp(36,20): warning C4477: 'printf' : format string '%ld' requires an argument of type 'long', but variadic argument 4 has type '__int64'
-C:\Users\Lume\source\repos\Shors-Cuda-Optimization\main.cpp(36,20): message : consider using '%lld' in the format string
-C:\Users\Lume\source\repos\Shors-Cuda-Optimization\main.cpp(36,20): message : consider using '%Id' in the format string
-C:\Users\Lume\source\repos\Shors-Cuda-Optimization\main.cpp(36,20): message : consider using '%I64d' in the format string
-     Creating library C:\Users\Lume\source\repos\Shors-Cuda-Optimization\x64\Release\Shors-Cuda-Optimization.lib and object C:\Users\Lume\source\repos\Shors-Cuda-Optimization\x64\Release\Shors-Cuda-Optimization.exp
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): message : consider using '%lld' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): message : consider using '%Id' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): message : consider using '%I64d' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 4 has type '__int64'
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): message : consider using '%lld' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): message : consider using '%Id' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): message : consider using '%I64d' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): warning C4477: 'printf' : format string '%ld' requires an argument of type 'long', but variadic argument 5 has type '__int64'
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): message : consider using '%lld' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): message : consider using '%Id' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(70,20): message : consider using '%I64d' in the format string
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(17,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(124): message : see reference to function template instantiation 'std::vector<std::vector<amp,std::allocator<amp>>,std::allocator<std::vector<amp,std::allocator<amp>>>> Multiply<amp>(std::vector<std::vector<amp,std::allocator<amp>>,std::allocator<std::vector<amp,std::allocator<amp>>>> &,std::vector<std::vector<amp,std::allocator<amp>>,std::allocator<std::vector<amp,std::allocator<amp>>>> &)' being compiled
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(17,1): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(18,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(18,1): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(19,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Lume\source\repos\Shor-cuda-optimize\main.cpp(19,1): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+     Creating library C:\Users\Lume\source\repos\Shor-cuda-optimize\x64\Release\Shors-Cuda-Optimization.lib and object C:\Users\Lume\source\repos\Shor-cuda-optimize\x64\Release\Shors-Cuda-Optimization.exp
   Generating code
-  1 of 589 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  1 of 851 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  Shors-Cuda-Optimization.vcxproj -> C:\Users\Lume\source\repos\Shors-Cuda-Optimization\x64\Release\Shors-Cuda-Optimization.exe
+  Shors-Cuda-Optimization.vcxproj -> C:\Users\Lume\source\repos\Shor-cuda-optimize\x64\Release\Shors-Cuda-Optimization.exe
